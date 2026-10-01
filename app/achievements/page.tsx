@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase-browser";
 
-// Forces Next.js to skip build-time static checks for this page
 export const dynamic = "force-dynamic";
 
 type Achievement = {
@@ -24,7 +23,6 @@ export default function AchievementsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Initialize Supabase safely only when the browser renders the page
     const supabase = createClient();
 
     async function loadAchievements() {
@@ -170,3 +168,4 @@ export default function AchievementsPage() {
       </footer>
     </main>
   );
+}
